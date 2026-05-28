@@ -5,7 +5,7 @@ from taxi.models import Driver
 
 
 class FormsTests(TestCase):
-    def test_driver_creation_form_with_license_number_first_last_name_is_valid(self):
+    def test_driver_creation_form_with_license_first_last_name_is_valid(self):
         form_data = {
             "username": "new_user",
             "password1": "user12test",
@@ -72,8 +72,8 @@ class FormsTests(TestCase):
             form.errors["license_number"]
         )
 
-class DriverLicenseUpdateFormTests(TestCase):
 
+class DriverLicenseUpdateFormTests(TestCase):
     def test_valid_license_update(self):
         driver = Driver.objects.create_user(
             username="driver1",
